@@ -7,13 +7,15 @@ const config = require('../config')
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const userRouter = require('./users/users.router')
-const authRouter = require('./auth/auth.router')
+
 
 //? Initial Configs
 
 const app = express()
+
 //? Enable incoming JSON data
 app.use(express.json())
+
 //? Enable CORS 
 app.use(cors())
 
@@ -40,8 +42,8 @@ app.get('/', (req, res) => {
     })
 })
 
+//?Add routers
 app.use('/api/v1/users', userRouter)
-app.use('/api/v1/auth', authRouter)
 
 
 app.listen(config.api.port, () => {

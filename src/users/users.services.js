@@ -1,6 +1,8 @@
 const userControllers = require('./users.controllers')
+const mailer = require('../utils/mailer')
+const config=require('../../config')
 
-//? Get, Post
+
 
 const getAllUsers = (req, res) => {
     userControllers.findAllUsers()
@@ -27,22 +29,13 @@ const getUserById = (req, res) => {
         })
 }
 
-const getMyUser = (req, res) => {
-    const id = req.user.id 
-    userControllers.findUserById(id)
-        .then((data) => {
-            res.status(200).json(data)
-        })
-        .catch((err) => {
-            res.status(400).json({message: err.message})
-        })
-}
+
 
 const postUser = (req, res) => {
     const {firstName, lastName, email, password, gender, birthday} = req.body
     userControllers.createUser({firstName, lastName, email, password,gender, birthday})
-        .then((data) => {
-            res.status(201).json(data)
+        .then( (data) => {
+                res.status(201).json(data)
         })
         .catch((err) => {
             res.status(400).json({message: err.message, fields: {
@@ -56,7 +49,7 @@ const postUser = (req, res) => {
         })
 }
 
-//? Solo admins pueden ejecutarlo
+
 const patchUser = (req, res) => {
     const id = req.params.id 
     const {firstName, lastName, email, gender, birthday, role, status} = req.body
@@ -74,19 +67,8 @@ const patchUser = (req, res) => {
         })
 }
 
-const patchMyUser = (req, res) => {
-    const id = req.user.id
-    const { firstName, lastName, gender, birthday } = req.body
-    userControllers.updateUser(id, {firstName, lastName, gender, birthday})
-        .then(() => {
-            res.status(200).json({message: 'Your user was edited succesfully!'})
-        })
-        .catch((err) => {
-            res.status(400).json({message: err.message})
-        })
-}
 
-//? Solo admins pueden ejecutarlo
+
 const deleteUser = (req, res) => {
     const id = req.params.id 
     userControllers.deleteUser(id)
@@ -102,24 +84,12 @@ const deleteUser = (req, res) => {
         })
 }
 
-const deleteMyUser = (req, res) => {
-    const id = req.user.id 
-    userControllers.deleteUser(id)
-        .then(() => {
-            res.status(204).json()
-        })
-        .catch((err) => {
-            res.status(400).json({message: err.message})
-        })
-}
+
 
 module.exports= {
     getAllUsers,
-    getMyUser,
     getUserById,
     postUser,
-    patchMyUser,
     patchUser,
-    deleteMyUser,
     deleteUser
 }
