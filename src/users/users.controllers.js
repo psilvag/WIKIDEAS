@@ -15,6 +15,7 @@ const findAllUsers = async () => {
     return data
 }
 
+//encuentra los ID
 const findUserById = async (id) => {
     const data = await Users.findOne({
         attributes: {
