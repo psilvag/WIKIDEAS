@@ -6,7 +6,7 @@ const cors = require('cors')
 const config = require('../config')
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
-const userRouter = require('./users/users.router')
+const categoryRouter = require('./categories/categories.router')
 
 
 //? Initial Configs
@@ -35,17 +35,15 @@ initModels()
 app.get('/', (req, res) => {
     res.status(200).json({
         status: 200,
-        message: 'Ok!',
-        routes: {
-            users: ""
-        }
-    })
+        message: 'Ok!'
+     })
 })
 
 //?Add routers
-app.use('/api/v1/users', userRouter)
+app.use('/api/v1/wiki/categories', categoryRouter)
 
 
+//? Listen port
 app.listen(config.api.port, () => {
     console.log(`Server started on ${config.api.host}`)
 })
