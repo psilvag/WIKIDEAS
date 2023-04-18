@@ -7,7 +7,7 @@ const config = require('../config')
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const categoryRouter = require('./categories/categories.router')
-
+const articlesRouter=require('./articles/articles.router')
 
 //? Initial Configs
 
@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
 })
 
 //?Add routers
-app.use('/api/v1/wiki/categories', categoryRouter)
-
+app.use('/api/v1/wikiIdeas/categories', categoryRouter)
+app.use('/api/v1/wikiIdeas/articles',articlesRouter)
 
 //? Listen port
 app.listen(config.api.port, () => {

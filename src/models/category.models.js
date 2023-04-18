@@ -6,6 +6,7 @@ const Categories = db.define('categories' ,{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement:true
+        
     },
     nameCategory: {
         type: DataTypes.STRING,
