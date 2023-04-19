@@ -8,4 +8,21 @@ router.route('/')
 router.route('/:articleId')
 .get(articlesServices.getArticleById)
 
+
 module.exports=router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
