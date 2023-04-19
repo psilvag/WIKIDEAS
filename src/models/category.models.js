@@ -23,13 +23,16 @@ async function seed (){
     try{
         await Categories.bulkCreate([
             {nameCategory:"Cultura y entretenimiento"},
-            {nameCategory:"Ciencia y tecnologia"},
+            {nameCategory:"Ciencia y tecnología"},
             {nameCategory:"Viajes y turismo"},
             {nameCategory:"Salud y bienestar"},
-            {nameCategory:"Alimentacion y cocina"},
-            {nameCategory:"Educacion y desarrollo"},
+            {nameCategory:"Alimentación y cocina"},
+            {nameCategory:"Educación y desarrollo"},
+            {nameCategory:"Negocios y finanzas"},
             {nameCategory:"Medio ambiente"},
+            {nameCategory:"Política"},
             {nameCategory:"Deportes"}
+
             
      ])
      console.log("Categorias creadas exitosamente")
