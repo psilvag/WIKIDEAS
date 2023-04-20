@@ -45,5 +45,5 @@ app.use('/api/v1/wikiIdeas/articles',articlesRouter)
 
 //? Listen port
 app.listen(config.api.port, () => {
-    console.log(`Server started on ${config.api.host}`)
+    console.log(`Server started on ${config.api.port}`)
 })

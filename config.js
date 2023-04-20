@@ -1,17 +1,33 @@
-require('dotenv').config()
+const dotenv=require('dotenv')
+
+
+if(process.env.NODE_ENV==="production")
+{
+    dotenv.config({
+        path:'.env.production'
+    })
+}else{
+    dotenv.config({
+        path:'.env.development'
+    })
+}
+
 
 module.exports = {
     api: {
         // port: process.env.PORT ? process.env.PORT : 3000,
-        port: process.env.PORT || 3000,
-        host: process.env.HOST || 'http://localhost:3000/'
+        port: process.env.PORT || 9000,
+        host: process.env.HOST || 'http://localhost:9000/'
      },
     db: {
-        host: process.env.DB_HOST,
+        host: process.env.DB_HOST ,
         user: process.env.DB_USER,
-        pass: process.env.DB_PASSWORD,
+        pass:  process.env.DB_PASSWORD,
         name: process.env.DB_NAME,
-        port: process.env.DB_PORT
+        port:process.env.DB_PORT
+      
     }
 }
+
+
 

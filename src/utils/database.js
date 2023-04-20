@@ -8,6 +8,7 @@ const db = new Sequelize({
     password: config.db.pass,
     database: config.db.name,
     port: config.db.port
+    
 })
 
 
