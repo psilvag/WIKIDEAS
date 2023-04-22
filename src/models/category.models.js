@@ -1,6 +1,7 @@
 const {DataTypes}=require('sequelize')
 const db=require('../utils/database')
 
+// Category models
 const Categories = db.define('categories' ,{
     id: {
         type: DataTypes.INTEGER,

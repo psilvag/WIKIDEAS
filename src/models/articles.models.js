@@ -3,6 +3,7 @@ const db=require("../utils/database")
 const {DataTypes}=require("sequelize")
 const Categories=require("./category.models")
 
+// Articles Models
 const Articles=db.define('articles',{
     id:{
         type:DataTypes.UUID,
