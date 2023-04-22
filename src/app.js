@@ -35,7 +35,7 @@ initModels()
 app.get('/', (req, res) => {
     res.status(200).json({
         status: 200,
-        message: 'Ok!'
+        message: 'API Wikideas Ok!'
      })
 })
 
