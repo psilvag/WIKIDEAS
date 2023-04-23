@@ -1,16 +1,16 @@
 const dotenv=require('dotenv')
 
 
-if(process.env.NODE_ENV==="production")
-{
-    dotenv.config({
-        path:'.env.production'
-    })
-}else{
-    dotenv.config({
-        path:'.env.development'
-    })
-}
+// if(process.env.NODE_ENV==="production")
+// {
+//     dotenv.config({
+//         path:'.env.production'
+//     })
+// }else{
+//     dotenv.config({
+//         path:'.env.development'
+//     })
+// }
 
 
 module.exports = {
@@ -24,8 +24,8 @@ module.exports = {
         user: process.env.DB_USER,
         pass:  process.env.DB_PASSWORD,
         name: process.env.DB_NAME,
-        port:process.env.DB_PORT
-      
+        port:process.env.DB_PORT,
+        uri:process.env.DATABASE_URL
     }
 }
 
