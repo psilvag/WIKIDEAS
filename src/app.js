@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
 })
 
 //?Add routers
-app.use('/api/v1/wikiIdeas/categories', categoryRouter)
-app.use('/api/v1/wikiIdeas/articles',articlesRouter)
+app.use('/api/v1/wikideas/categories', categoryRouter)
+app.use('/api/v1/wikideas/articles',articlesRouter)
 
 //? Listen port
 app.listen(config.api.port, () => {
