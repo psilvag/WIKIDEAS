@@ -20,7 +20,7 @@ module.exports = {
         host: process.env.HOST || 'http://localhost:9000/'
      },
     db: {
-        dbConnectionString:procces.env.DATABASE_URL
+        dbConnectionString:process.env.DATABASE_URL
         // host: process.env.DB_HOST ,
         // user: process.env.DB_USER,
         // pass:  process.env.DB_PASSWORD,
