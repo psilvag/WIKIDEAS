@@ -1,6 +1,6 @@
 const uuid=require('uuid')
 const Articles=require('../models/articles.models')
-
+const Categories=require('../models/category.models')
 
 const findAllArticles=async()=>{
   const articles=   await Articles.findAll()
@@ -9,10 +9,18 @@ const findAllArticles=async()=>{
 
 const findArticleById=async(articleId)=>{
     const data =await Articles.findOne({
+      attributes: {
+        exclude: ['categoryId']
+        },
         where:{
             id:articleId
-        }
-    })
+         },
+        include:{
+        model:Categories,
+        attributes:['nameCategory']
+           
+       }
+  })
     return data
 }
 
