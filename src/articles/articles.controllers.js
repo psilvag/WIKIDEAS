@@ -9,9 +9,6 @@ const findAllArticles=async()=>{
 
 const findArticleById=async(articleId)=>{
     const data =await Articles.findOne({
-      attributes: {
-        exclude: ['categoryId']
-        },
         where:{
             id:articleId
          },
