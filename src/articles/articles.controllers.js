@@ -23,6 +23,10 @@ const findArticleById=async(articleId)=>{
 
 const findAllArticlesByCategoryId=async(categoryId)=>{
       const data= await Articles.findAll({
+        include:{
+          model:Categories,
+          attributes:['nameCategory']
+        },
         where:{
             categoryId:categoryId
         }
