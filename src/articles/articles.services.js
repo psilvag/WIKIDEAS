@@ -36,23 +36,31 @@ const getArticleById = (req, res) => {
 
 const getArticlesByCategoryId = (req, res) => {
     const categoryId = req.params.categoryId
-    articlesControllers.findAllArticlesByCategoryId(categoryId)
-        .then(data => {
-            if (data) {
-                res.status(200).json(data)
-            }
-            else {
-                res.status(404).json({
-                    message: `CategoryId ${categoryId} not found`
-                })
-            }
+    if (categoryId >= 1 && categoryId <= 10) {
+        articlesControllers.findAllArticlesByCategoryId(categoryId)
+            .then(data => {
+                if (data.length > 0) {
+                    res.status(200).json(data)
+                }
+                else {
+                    res.status(200).json({
+                        message: `CategoryId ${categoryId} is empty`
+                    })
+                }
 
-        })
-        .catch(err => {
-            res.status(400).json({
-                message: err.message
             })
+
+            .catch(err => {
+                res.status(400).json({
+                    message: err.message
+                })
+            })
+    }
+    else {
+        res.status(404).json({
+            message: 'This category does not exist'
         })
+    }
 }
 
 const postArticle = (req, res) => {
