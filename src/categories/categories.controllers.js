@@ -1,10 +1,9 @@
 const Categories = require('../models/category.models')
 
-const getAllCategories= async ()=>{
-     const allCategories= await Categories.findAll()
+const getAllCategories = async () => {
+     const allCategories = await Categories.findAll()
      return allCategories
 }
-
 
 // const createCategory = async (obj) => {
 //     const newCategory= await Categories.create({
@@ -25,6 +24,7 @@ const getAllCategories= async ()=>{
 
 
 module.exports = {
-getAllCategories
+     getAllCategories
 
- }
+
+}

@@ -1,15 +1,15 @@
 
-const router=require('express').Router()
-const  articlesServices=require('./articles.services')
+const router = require('express').Router()
+const articlesServices = require('./articles.services')
 
 router.route('/')
-.get(articlesServices.getAllArticles)
+    .get(articlesServices.getAllArticles)
 
 router.route('/:articleId')
-.get(articlesServices.getArticleById)
+    .get(articlesServices.getArticleById)
+    .patch(articlesServices.updateCategoryIdArticle)
 
-
-module.exports=router
+module.exports = router
 
 
 

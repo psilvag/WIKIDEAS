@@ -24,5 +24,7 @@ GET:        api/v1/wikideas/articles/
 ----------------------------------------------------------------------------------------------------
 Find article by Id
 GET:        api/v1/wikideas/articles/:articleId
-
+____________________________________________________________________________________________________
+Update article categoryId 
+PATCH:      api/v1/wikideas/articles/:articleId
 

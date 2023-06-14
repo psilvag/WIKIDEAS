@@ -7,7 +7,7 @@ const config = require('../config')
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const categoryRouter = require('./categories/categories.router')
-const articlesRouter=require('./articles/articles.router')
+const articlesRouter = require('./articles/articles.router')
 
 //? Initial Configs
 
@@ -36,12 +36,12 @@ app.get('/', (req, res) => {
     res.status(200).json({
         status: 200,
         message: 'API Wikideas Ok!'
-     })
+    })
 })
 
 //?Add routers
 app.use('/api/v1/wikideas/categories', categoryRouter)
-app.use('/api/v1/wikideas/articles',articlesRouter)
+app.use('/api/v1/wikideas/articles', articlesRouter)
 
 //? Listen port
 app.listen(config.api.port, () => {

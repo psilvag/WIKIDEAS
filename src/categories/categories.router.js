@@ -1,8 +1,8 @@
 const router = require('express').Router()
 const categoriesServices = require('./categories.services')
-const articlesServices=require('../articles/articles.services')
+const articlesServices = require('../articles/articles.services')
 
-//const {use} = require('chai')
+
 
 router.route('/')
     .get(categoriesServices.getAllCategories)

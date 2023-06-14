@@ -1,19 +1,17 @@
 const categoriesControllers = require('./categories.controllers')
 
 
- const getAllCategories=(req,res)=>{
+const getAllCategories = (req, res) => {
     categoriesControllers.getAllCategories()
-    .then(data=>{
-        res.status(200).json(data)
-    })
-    .catch(err=>{
-         res.status(400).json({
-            message:err.message
+        .then(data => {
+            res.status(200).json(data)
         })
-    })
- }
-
-
+        .catch(err => {
+            res.status(400).json({
+                message: err.message
+            })
+        })
+}
 
 
 // const postCategory = (req, res) => {
@@ -48,7 +46,7 @@ const categoriesControllers = require('./categories.controllers')
 
 
 
-module.exports= {
+module.exports = {
     getAllCategories
-   
+
 }
